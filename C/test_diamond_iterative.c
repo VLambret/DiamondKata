@@ -54,10 +54,10 @@ void test_DiamondB_indents_first_and_last_rows() {
 void test_DiamondC_indents_all_rows_except_middle() {
 	char buffer[1024];
 	diamond_print('C', buffer);
-	TEST_ASSERT_EQUAL_STRING("  A"
-	                         " B"
-	                         "C"
-	                         " B"
+	TEST_ASSERT_EQUAL_STRING("  A\n"
+	                         " B\n"
+	                         "C\n"
+	                         " B\n"
 	                         "  A", buffer);
 }
 
@@ -70,10 +70,10 @@ void test_DiamondB_duplicates_the_middle_B() {
 void test_DiamondC_duplicates_letters_on_middle_rows() {
 	char buffer[1024];
 	diamond_print('C', buffer);
-	TEST_ASSERT_EQUAL_STRING("  A"
-	                         " BB"
-	                         "CC"
-	                         " BB"
+	TEST_ASSERT_EQUAL_STRING("  A\n"
+	                         " BB\n"
+	                         "CC\n"
+	                         " BB\n"
 	                         "  A", buffer);
 }
 
@@ -86,24 +86,25 @@ void test_DiamondB_has_a_space_between_the_two_Bs() {
 void test_DiamondC_has_spaces_on_middle_rows() {
 	char buffer[1024];
 	diamond_print('C', buffer);
-	TEST_ASSERT_EQUAL_STRING("  A"
-	                         " B B"
-	                         "C   C"
-	                         " B B"
+	TEST_ASSERT_EQUAL_STRING("  A\n"
+	                         " B B\n"
+	                         "C   C\n"
+	                         " B B\n"
 	                         "  A", buffer);
 }
 
 void test_DiamondD_is_correct() {
 	char buffer[1024];
 	diamond_print('D', buffer);
-	TEST_ASSERT_EQUAL_STRING("   A"
-	                         "  B B"
-	                         " C   C"
-	                         "D     D"
-	                         " C   C"
-	                         "  B B"
+	TEST_ASSERT_EQUAL_STRING("   A\n"
+	                         "  B B\n"
+	                         " C   C\n"
+	                         "D     D\n"
+	                         " C   C\n"
+	                         "  B B\n"
 	                         "   A", buffer);
 }
+
 
 int main() {
 	UnityBegin(__FILE__);
